@@ -1,0 +1,312 @@
+@media (prefers-color-scheme: light) {
+	
+	#container {
+		margin-top: 50px;
+		align-self: center;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+	}
+	
+	.cabeceraLogin {
+		height: 50px;
+		align-self: center;
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
+	
+	.cabeceraLogin img{
+		height: 50px;
+	}
+	
+	#formularioLogin {
+		align-self: center;
+		margin-top: 20px;
+	}
+	
+	.botonLogin {
+		outline:0px;
+		margin: 5px;
+		background-color:#f7157b;
+		border-radius:6px;
+		border:1px solid #f7157b;
+		display:inline-block;
+		color:white;
+		font-family:Arial;
+		font-size:17px;
+		padding:18px 35px;
+		text-decoration:none;
+		-webkit-box-shadow: 0px 0px 54px -1px rgba(247,21,123,1);
+		-moz-box-shadow: 0px 0px 54px -1px rgba(247,21,123,1);
+		box-shadow: 0px 0px 54px -1px rgba(247,21,123,1);
+		
+	}
+	.botonLogin:hover {
+			background-color:#f7157b;
+			border:1px solid #f7157b;
+			color:white;
+			font-family:Arial;
+			font-size:17px;
+			padding:18px 35px;
+			text-decoration:none;
+			-webkit-box-shadow: 0px 0px 65px -1px rgba(247,21,123,1);
+			-moz-box-shadow: 0px 0px 65px -1px rgba(247,21,123,1);
+			box-shadow: 0px 0px 65px -1px rgba(247,21,123,1);
+	}
+	
+	.botonLogin:active {
+		position:relative;
+		top:1px;
+	}
+	
+	.botonRegistro {
+		outline:0px;
+		margin: 5px;
+		background-color:transparent;
+		border-radius:6px;
+		border:1px solid #f7157b;
+		display:inline-block;
+		cursor:pointer;
+		color:#f7157b;
+		font-family:Arial;
+		font-size:17px;
+		padding:18px 35px;
+		text-decoration:none;
+	}
+	.botonRegistro:hover {
+		background-color:#f7157b;
+		border-radius:6px;
+		border:1px solid #f7157b;
+		display:inline-block;
+		color:white;
+		font-family:Arial;
+		font-size:17px;
+		padding:18px 35px;
+		text-decoration:none;
+		
+	}
+	.botonRegistro:active {
+		position:relative;
+		top:1px;
+	}
+	
+	.inputLogin {
+		border:1px solid black;
+		width: 100%;
+		border-radius: 6px;
+		background-color: white;
+		padding:10px 18px;
+		outline:0px;
+	}
+	
+	.inputLogin:focus {
+		border:1px solid #f7157b;
+		width: 100%;
+		border-radius: 6px;
+		background-color: white;
+		padding:10px 18px;
+	}
+	
+	
+}
+
+@media (prefers-color-scheme: dark) {
+	*{
+		background-color: black;
+		box-sizing: border-box;
+		color: white;
+		font-family: 'Montserrat', sans-serif;
+	}
+	
+	*::selection {
+		background: #ff2989;
+		color: white;
+	}
+	
+	#container {
+		margin-top: 50px;
+		align-self: center;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+	}
+	
+	.cabeceraLogin {
+		height: 50px;
+		align-self: center;
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
+	
+	.cabeceraLogin img{
+		height: 50px;
+	}
+	
+	#formularioLogin {
+		align-self: center;
+		margin-top: 20px;
+	}
+	
+	.botonLogin {
+		outline:0px;
+		margin: 5px;
+		background-color:#f7157b;
+		border-radius:6px;
+		border:1px solid #f7157b;
+		display:inline-block;
+		color:white;
+		font-family:Arial;
+		font-size:17px;
+		padding:18px 35px;
+		text-decoration:none;
+		-webkit-box-shadow: 0px 0px 54px -1px rgba(247,21,123,1);
+		-moz-box-shadow: 0px 0px 54px -1px rgba(247,21,123,1);
+		box-shadow: 0px 0px 54px -1px rgba(247,21,123,1);
+		
+	}
+	.botonLogin:hover {
+			background-color:#f7157b;
+			border:1px solid #f7157b;
+			color:white;
+			font-family:Arial;
+			font-size:17px;
+			padding:18px 35px;
+			text-decoration:none;
+			-webkit-box-shadow: 0px 0px 65px -1px rgba(247,21,123,1);
+			-moz-box-shadow: 0px 0px 65px -1px rgba(247,21,123,1);
+			box-shadow: 0px 0px 65px -1px rgba(247,21,123,1);
+			filter: blur(2px);
+			  -webkit-filter: blur(2px);
+	}
+	
+	.botonLogin:active {
+		position:relative;
+		top:1px;
+	}
+	
+	.botonRegistro {
+		outline:0px;
+		margin: 5px;
+		background-color:transparent;
+		border-radius:6px;
+		border:1px solid #f7157b;
+		display:inline-block;
+		cursor:pointer;
+		color:#f7157b;
+		font-family:Arial;
+		font-size:17px;
+		padding:18px 35px;
+		text-decoration:none;
+	}
+	.botonRegistro:hover {
+		background-color:#f7157b;
+		border-radius:6px;
+		border:1px solid #f7157b;
+		display:inline-block;
+		color:white;
+		font-family:Arial;
+		font-size:17px;
+		padding:18px 35px;
+		text-decoration:none;
+		
+	}
+	.botonRegistro:active {
+		position:relative;
+		top:1px;
+	}
+	
+	.inputLogin {
+		border:1px solid white;
+		width: 100%;
+		border-radius: 6px;
+		background-color: black;
+		padding:10px 18px;
+		outline:0px;
+	}
+	
+	.inputLogin:focus {
+		border:1px solid #f7157b;
+		width: 100%;
+		border-radius: 6px;
+		background-color: black;
+		padding:10px 18px;
+	}
+	
+	
+	
+}@keyframes click-wave {
+	0% {
+	  height: 30px;
+	  width: 43px;
+	  opacity: 0.35;
+	  position: relative;
+	}
+	100% {
+	  height: 200px;
+	  width: 200px;
+	  margin-left: -80px;
+	  margin-top: -80px;
+	  opacity: 0;
+	}
+  }
+  
+  .option-input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	position: relative;
+	top: 13.33333px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 30px;
+	width: 30px;
+	transition: all 0.15s ease-out 0s;
+	background:#5032F7;
+	border: none;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 0.5rem;
+	outline: none;
+	position: relative;
+	z-index: 1000;
+  }
+  .option-input:hover {
+	background: white;
+	color: #5032F7;
+  }
+  .option-input:checked {
+	background: #ff2989;
+  }
+  .option-input:checked::before {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	content: 'O';
+	display: inline-block;
+	font-size: 26.66667px;
+	text-align: center;
+	line-height: 30px;
+  }
+  .option-input:checked::after {
+	-webkit-animation: click-wave 0.65s;
+	-moz-animation: click-wave 0.65s;
+	animation: click-wave 0.65s;
+	background: #5032F7;
+	content: '';
+	display: block;
+	position: relative;
+	z-index: 100;
+  }
+
+  label {
+	display: block;
+	line-height: 30px;
+  }
