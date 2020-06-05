@@ -190,7 +190,7 @@
                 echo "<h5 class='card-title'>".$evento->getTitulo()."</h5>";
                 echo "<small class='text-muted'>".$evento->getFecha()." | ".$evento->getLugar()."</small>";
                 echo "<br><br><p class='card-text'>".$evento->getDescripcion()."</p>";
-                echo "<small>Evento organizado por <a href='../Controller/c_eventosempresa.php?empresa=".$organizador->getEmpresa()."'>".$organizador->getEmpresa()."</a></small>";
+                
 
                 //si se está mostrando a un usuario, mostramos el botón love,
                 //y comprobamos si debe o no mostrarse marcado
@@ -203,6 +203,7 @@
                         else {
                             $estilo = "icono";
                         }
+                    echo "<small>Evento organizado por <a href='../Controller/c_eventosempresa.php?empresa=".$organizador->getEmpresa()."'>".$organizador->getEmpresa()."</a></small>";
                     echo "<p class='card-text'><i id='".$eventoBuscado."' class='icon ".$estilo."'></i></p>";
                     echo "</div></div></div></div><br>";
                 }

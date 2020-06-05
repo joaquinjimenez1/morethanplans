@@ -4,7 +4,7 @@ var contenedor = document.getElementById("chat");
 var boton = document.getElementById("botonchat");
 
 var hijo = document.createElement("p");
-hijo.innerHTML = "<p class='w3-animate-bottom chatasistente'>¡Hola Joaquín! encantada. ¿Qué tal estás?</p>";
+hijo.innerHTML = "<p class='w3-animate-bottom chatasistente'>¡Hola! encantada. ¿Qué tal estás?</p>";
 contenedor.appendChild(hijo);
 
 var pasadas = 0;

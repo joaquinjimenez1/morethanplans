@@ -13,10 +13,11 @@
 <body>
     <div id="container">
             <div class="cabeceraLogin">
-                <img src="../View/images/logo.png">
+            <a href="../Controller/c_inicio.php"><img src="../View/images/logo.png"></a>
             </div>
             <div class="row justify-content-center">
             <div class="col-md-4" id="formularioLogin">
+            <h4><?php echo $error; ?></h4><br>
             <h2>Necesitamos conocerte más para planear juntos.<br><br></h2>
                 <form action="c_registro.php" method="post">
                     <label>Algunos datos sobre tí...</label>

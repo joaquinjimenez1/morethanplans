@@ -19,7 +19,7 @@
 <body>
 <div class="wrapper">
   <nav class="navbar navbar-custom justify-content-between">
-    <a class="navbar-brand" href="../Controller/c_iniciousuario.php">
+    <a class="navbar-brand" href="../Controller/c_inicio.php">
       <img src="../View/images/logo.png" height="30">
     </a>
     <form class="form-inline">

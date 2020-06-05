@@ -82,6 +82,14 @@
             $conexion = m_morethanplansDB::connectDB();
             $consulta = $conexion->query("SELECT * FROM usuario WHERE usuario='".$usuarioBuscado."'");
 
+            if($consulta->rowcount()<1){
+                return 0;
+            }
+
+            else {
+
+            
+
             while ($user = $consulta->fetchObject()) {
                 $usuarioObtenido = $user->usuario;
                 $claveObtenida = $user->clave;
@@ -94,7 +102,7 @@
             $usuarioFinal = new m_Usuario($usuarioObtenido,$claveObtenida,$nombreObtenido,$apellidosObtenidos,$fechanacObtenida,$gustosObtenidos);
 
             return $usuarioFinal;
-
+        }
         }
   
     }

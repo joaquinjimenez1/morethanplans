@@ -29,7 +29,9 @@ else {
         }
     }
     else {
-        $error = "";
+
+            $error = "";
+
         include "../View/v_login.php";
     }
 }
