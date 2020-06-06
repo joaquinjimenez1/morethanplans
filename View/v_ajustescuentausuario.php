@@ -61,6 +61,7 @@
                     <input type="submit" id="enviar" class="botonLogin" value="ACTUALIZAR DATOS">
                     </div>
                 </form>
+                </div><a class="btn btn-light" href="c_inicio.php">Volver</a></div>
             </div>
         </div>
     </div>

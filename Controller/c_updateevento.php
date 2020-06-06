@@ -27,8 +27,9 @@
         $etiquetasCodificadas = json_encode($etiquetas);
 
         if($_FILES['imagen']['name']!= null){
-            move_uploaded_file($_FILES["imagen"]["tmp_name"], "../View/images/eventos/" . $_FILES["imagen"]['name']);
-            $evento = new m_Evento($_POST['titulo'],$_POST['descripcion'],$_FILES["imagen"]['name'],$_POST['lugar'],$_POST['fecha']." ".$_POST['hora'],$etiquetasCodificadas,$_SESSION['usuariomtp']);
+            $nombreImagen = $_FILES["imagen"]['name'].date(DATE_ATOM, mktime());
+            move_uploaded_file($_FILES["imagen"]["tmp_name"], "../View/images/eventos/" .$nombreImagen);
+            $evento = new m_Evento($_POST['titulo'],$_POST['descripcion'],$nombreImagen,$_POST['lugar'],$_POST['fecha']." ".$_POST['hora'],$etiquetasCodificadas,$_SESSION['usuariomtp']);
         }
 
         else {

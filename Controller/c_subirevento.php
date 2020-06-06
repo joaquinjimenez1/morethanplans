@@ -30,9 +30,11 @@ if(isset($_POST['concierto'])){
 $etiquetasCodificadas = json_encode($etiquetas);
 
 //se carga la imagen al servidor, y guardamos su nombre en la base de datos al subir el evento
-move_uploaded_file($_FILES["imagen"]["tmp_name"], "../View/images/eventos/" . $_FILES["imagen"]['name']);
+$nombreImagen = $_FILES["imagen"]['name'].date(DATE_ATOM, mktime());
 
-$eventoSinSubir = new m_Evento($_POST['titulo'],$_POST['descripcion'],$_FILES["imagen"]['name'],$_POST['lugar'],$_POST['fecha']." ".$_POST['hora'],$etiquetasCodificadas,$_SESSION['usuariomtp']);
+move_uploaded_file($_FILES["imagen"]["tmp_name"], "../View/images/eventos/" .$nombreImagen);
+
+$eventoSinSubir = new m_Evento($_POST['titulo'],$_POST['descripcion'],$nombreImagen,$_POST['lugar'],$_POST['fecha']." ".$_POST['hora'],$etiquetasCodificadas,$_SESSION['usuariomtp']);
 $eventoSinSubir->insert();
 
 header("Location: c_inicioorganizador.php?");
