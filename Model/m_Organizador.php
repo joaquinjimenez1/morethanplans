@@ -39,6 +39,8 @@
 
         public function delete(){
 
+            m_Organizador::borrarPlanesOrganizados($_SESSION['usuariomtp']);
+
             $conexion = m_morethanplansDB::connectDB();
             $borrado = "DELETE FROM organizador WHERE usuario='".$this->usuario."'";
             $conexion->exec($borrado);

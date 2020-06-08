@@ -128,26 +128,34 @@
 
         //devuelve un evento dado un codigo
         public static function obtenerEvento($eventoBuscado){
-            
+
             $conexion = m_morethanplansDB::connectDB();
             $consulta = $conexion->query("SELECT * FROM evento WHERE codigo='".$eventoBuscado."'");
 
-            while ($evento = $consulta->fetchObject()) {
-                $codigoObtenido = $evento->codigo;
-                $tituloObtenido = $evento->titulo;
-                $descripcionObtenida = $evento->descripcion;
-                $imagenObtenida = $evento->imagen;
-                $lugarObtenido = $evento->lugar;
-                $fechaObtenida = $evento->fecha;
-                $etiquetasObtenidas = $evento->etiquetas;
-                $organizadorObtenido = $evento->usuario_organizador;
+            if($consulta->rowcount()<1){
+                return 0;
+            }
+
+            else {
+
+                while ($evento = $consulta->fetchObject()) {
+                    $codigoObtenido = $evento->codigo;
+                    $tituloObtenido = $evento->titulo;
+                    $descripcionObtenida = $evento->descripcion;
+                    $imagenObtenida = $evento->imagen;
+                    $lugarObtenido = $evento->lugar;
+                    $fechaObtenida = $evento->fecha;
+                    $etiquetasObtenidas = $evento->etiquetas;
+                    $organizadorObtenido = $evento->usuario_organizador;
+                }
+                
+                $eventoFinal = new m_Evento($tituloObtenido,$descripcionObtenida,$imagenObtenida,$lugarObtenido,$fechaObtenida,$etiquetasObtenidas,$organizadorObtenido);
+                $eventoFinal->setCodigo($codigoObtenido);
+    
+                return $eventoFinal;
+
             }
             
-            $eventoFinal = new m_Evento($tituloObtenido,$descripcionObtenida,$imagenObtenida,$lugarObtenido,$fechaObtenida,$etiquetasObtenidas,$organizadorObtenido);
-            $eventoFinal->setCodigo($codigoObtenido);
-
-            return $eventoFinal;
-
         }
 
     
@@ -284,9 +292,12 @@
             $losgustos = $usuarioObtenido->getGustos();
 
                 for ($i=0; $i < count($losgustos); $i++) {
-                    if($i>=3){
+
+                    if(($i>=3)){
                         m_Evento::pintarEvento($losgustos[$i]);
+                        $i++;
                     } 
+                    
                 }
         }
 
@@ -295,16 +306,26 @@
             $usuarioObtenido = m_Usuario::obtenerUsuario($usuarioRecibido);
             $losgustos = $usuarioObtenido->getGustos();
 
-            if(count($losgustos)>3){
+            $gustosexistentes = 0;
+
+            for ($i=0; $i < count($losgustos); $i++) {
+                if((m_Evento::obtenerEvento($losgustos[$i]))!=0){
+                    $gustosexistentes++;
+                } 
+            }
+
+            if($gustosexistentes>3){
                 $limite = 3;
             }
 
             else {
-                $limite = count($losgustos);
+                $limite = $gustosexistentes;
             }
 
                 for ($i=0; $i < $limite; $i++) { 
-                   m_Evento::pintarEvento($losgustos[$i]);
+                    
+                    m_Evento::pintarEvento($losgustos[$i]);
+                    
                 }
         }
 
@@ -316,7 +337,7 @@
 
 
             if($consulta->rowcount()<1){
-                echo "No hemos encontrado ningun evento para tí.";
+                echo "No hemos encontrado ningun evento para tí, necesitamos un poco más de información.";
             }
             else {
                 
