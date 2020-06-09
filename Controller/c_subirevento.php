@@ -30,11 +30,26 @@ if(isset($_POST['concierto'])){
 $etiquetasCodificadas = json_encode($etiquetas);
 
 //se carga la imagen al servidor, y guardamos su nombre en la base de datos al subir el evento
-$nombreImagen = $_FILES["imagen"]['name'].date(DATE_ATOM, mktime());
 
-move_uploaded_file($_FILES["imagen"]["tmp_name"], "../View/images/eventos/" .$nombreImagen);
+$conexion = m_morethanplansDB::connectDB();
 
-$eventoSinSubir = new m_Evento($_POST['titulo'],$_POST['descripcion'],$nombreImagen,$_POST['lugar'],$_POST['fecha']." ".$_POST['hora'],$etiquetasCodificadas,$_SESSION['usuariomtp']);
+$repetido = true;
+
+while ($repetido == true) {
+    $repetido = false;
+    $numeroaleatorio = rand(1,999999);
+    $consulta = $conexion->query("SELECT * FROM evento WHERE imagen LIKE ('".$numeroaleatorio."')");
+
+    if($consulta->rowcount()>0){
+        $repetido = true;
+    }
+}
+
+
+
+move_uploaded_file($_FILES["imagen"]["tmp_name"], "../View/images/eventos/" .$numeroaleatorio);
+
+$eventoSinSubir = new m_Evento($_POST['titulo'],$_POST['descripcion'],$numeroaleatorio,$_POST['lugar'],$_POST['fecha']." ".$_POST['hora'],$etiquetasCodificadas,$_SESSION['usuariomtp']);
 $eventoSinSubir->insert();
 
 header("Location: c_inicioorganizador.php?");

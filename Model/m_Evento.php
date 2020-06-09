@@ -192,8 +192,8 @@
 
            $organizador = m_Organizador::obtenerOrganizador($evento->getOrganizador());
     
-                echo "<div class='card mb-3'><div class='row no-gutters'><div class='col-md-4 objetfit'>";
-                echo "<img src='../View/images/eventos/".$evento->getImagen()."' class='card-img'></div>";
+                echo "<div class='card mb-3'><div class='row no-gutters'><div class='col-md-4 objetfit' style='background:url(../View/images/eventos/".$evento->getImagen().") no-repeat center center; background-size:cover; min-height:300px;'>";
+                echo "</div>";
                 echo "<div class='col-md-8'><div class='card-body'>";
                 echo "<h5 class='card-title'>".$evento->getTitulo()."</h5>";
                 echo "<small class='text-muted'>".$evento->getFecha()." | ".$evento->getLugar()."</small>";
@@ -238,8 +238,8 @@
 
            $organizador = m_Organizador::obtenerOrganizador($evento->getOrganizador());
     
-                echo "<div class='card mb-3'><div class='row no-gutters'><div class='col-md-4 objetfit'>";
-                echo "<img src='../View/images/eventos/".$evento->getImagen()."' class='card-img'></div>";
+                echo "<div class='card mb-3'><div class='row no-gutters'><div class='col-md-4 objetfit' style='background:url(../View/images/eventos/".$evento->getImagen().") no-repeat center center; background-size:cover; min-height:300px;'>";
+                echo "</div>";
                 echo "<div class='col-md-8'><div class='card-body'>";
                 echo "<h5 class='card-title'>".$evento->getTitulo()."</h5>";
                 echo "<small class='text-muted'>".$evento->getFecha()." | ".$evento->getLugar()."</small>";
@@ -353,7 +353,7 @@
                 }
 
                 for ($i=0; $i < $maximo; $i++) { 
-                   m_Evento::pintarEventoBusqueda($codigos[$i]);
+                   m_Evento::pintarEvento($codigos[$i]);
                 }
             }
 

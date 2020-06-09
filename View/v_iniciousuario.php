@@ -44,7 +44,7 @@
     <a class="btn btn-light" href="c_eventoslike.php">Ver todos</a>
     </div>
   <div class="contenido row mostrarTodo">
-  <div id="segunintereses" class="col-xl-12"><br>
+  </div><div class="col-xl-12"><br>
   <div class="jumbotron">
     <h1 class="jumbo">Descubre con nosotros</h1>
     <p class="jumbo">Quizás ahora tienes muy claros tus planes preferidos, pero nunca viene mal abrir la mente y probar cosas nuevas.</p>
