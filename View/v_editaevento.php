@@ -36,12 +36,12 @@
     <form name="form2" action="c_updateevento.php" enctype="multipart/form-data" method="post">
                     <div class="form-group">
                     <br><h6 class="ayuda">TITULO</h6>
-                        <input type="hidden" name="codigo" value="<?=$evento->getCodigo();?>">
+                        <input type="hidden" id="titulo" name="codigo" value="<?=$evento->getCodigo();?>">
                         <input required type="text" name="titulo" class="inputLogin" value="<?=$evento->getTitulo();?>">
                     </div>
                     <div class="form-group">
                     <h6 class="ayuda">DESCRIPCIÓN</h6>
-                        <input required type="text" name="descripcion" class="inputLogin" value="<?=$evento->getDescripcion();?>">
+                        <input required id="descripcion" type="text" name="descripcion" class="inputLogin" value="<?=$evento->getDescripcion();?>">
                     </div>
                     <div class="form-group">
                     <h6 class="ayuda">IMAGEN</h6>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                     <h6 class="ayuda">LUGAR</h6>
-                        <input required type="text" name="lugar" class="inputLogin" value="<?=$evento->getLugar();?>">
+                        <input required id="lugar" type="text" name="lugar" class="inputLogin" value="<?=$evento->getLugar();?>">
                     </div>
                     <div class="form-group">
                     <h6 class="ayuda">FECHA</h6>
@@ -138,6 +138,7 @@
 </div>
 </footer>
 <!-- FIN PIE -->
+  <script src="../View/js/filtro.js" type="text/javascript"></script>
    <script src="../View/js/popper.min.js" type="text/javascript"></script>
    <script src="../View/js/bootstrap.min.js" type="text/javascript"></script>
    <script src="../View/js/bootstrap.bundle.min.js" type="text/javascript"></script>

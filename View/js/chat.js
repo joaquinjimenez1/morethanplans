@@ -1,4 +1,5 @@
 
+
 var texto = document.getElementById("textochat");
 var contenedor = document.getElementById("chat");
 var boton = document.getElementById("botonchat");
@@ -11,7 +12,12 @@ var pasadas = 0;
 
 var respuesta = "";
 
-boton.onclick = function(){
+function iniciar(){
+    boton.addEventListener('click',procesaChat);
+    boton.addEventListener('touchstart',procesaChat);
+  }
+
+function procesaChat(){
 
    
     var introducido = texto.value;
@@ -71,6 +77,7 @@ boton.onclick = function(){
     }
 
 
+
 function finChat(respuesta) {
     var contenedorPrincipal = document.getElementById("customplan");
     contenedorPrincipal.innerHTML = "<h2>Resultados de la búsqueda</h2>";
@@ -110,4 +117,4 @@ for (let index = 0; index < iconitos.length; index++) {
 }
 
        
-       
+addEventListener("load", iniciar);

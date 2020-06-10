@@ -40,11 +40,11 @@
     <form name="form2" action="c_subirevento.php" enctype="multipart/form-data" method="post">
                     <div class="form-group">
                     <br><h6 class="ayuda">TITULO</h6>
-                        <input required type="text" name="titulo" class="inputLogin" value="">
+                        <input required id="titulo" type="text" name="titulo" class="inputLogin" value="">
                     </div>
                     <div class="form-group">
                     <h6 class="ayuda">DESCRIPCIÓN</h6>
-                        <input required type="text" name="descripcion" class="inputLogin" value="">
+                        <input required id="descripción" type="text" name="descripcion" class="inputLogin" value="">
                     </div>
                     <div class="form-group">
                     <h6 class="ayuda">IMAGEN</h6>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group">
                     <h6 class="ayuda">LUGAR (¡Incluye todas las pistas posibles!)</h6>
-                        <input required type="text" name="lugar" class="inputLogin" value="">
+                        <input required id="lugar" type="text" name="lugar" class="inputLogin" value="">
                     </div>
                     <div class="form-group">
                     <h6 class="ayuda">FECHA</h6>
@@ -86,7 +86,7 @@
                     </label>
                     </div>
                     <div class="row justify-content-center">
-                    <input type="submit" id="enviar" class="btn btn-dark" value="PUBLICAR">
+                    <input type="submit" id="enviar" class="btn btn-dark" onclick="validaTitulos()" value="PUBLICAR">
                     </div>
                 </form>
     </div>
@@ -122,6 +122,7 @@
 </div>
 </footer>
 <!-- FIN PIE -->
+  <script src="../View/js/filtro.js" type="text/javascript"></script>
    <script src="../View/js/popper.min.js" type="text/javascript"></script>
    <script src="../View/js/bootstrap.min.js" type="text/javascript"></script>
    <script src="../View/js/bootstrap.bundle.min.js" type="text/javascript"></script>
