@@ -1,29 +1,33 @@
 
-function validaTitulos(){
+function iniciar(){
+  document.getElementById('titulo').addEventListener('blur',validaInput('titulo'));
+  document.getElementById('descripcion').addEventListener('blur',validaInput('descripcion'));
+  document.getElementById('lugar').addEventListener('blur',validaInput('lugar'));
+}
 
-  var cadenaTotal = document.getElementById('titulo').value+" "+document.getElementById('descripcion').value+" "+document.getElementById('lugar').value;
-  var arrayPalabras = cadenaTotal.split(" ");
+
+function validaInput(campo){
+
+  var cadenaTotal = document.getElementById(campo).value;
+  var cadenaMinusculas = cadenaTotal.toLowerCase();
+  var arrayPalabras = cadenaMinusculas.split(" ");
   var arrayNoPermitidas = ["gilipollas","tonto","capullo","polla","coño","pene","puta","mierda","porno","navo","bastardo","idiota",];
 
 
-  var permitido = true;
+  for (let index = 0; index < arrayPalabras.length; index++) {
 
-  for (let i = 0; i < arrayPalabras.length; i++) {
-   
-    if (arrayNoPermitidas.includes(arrayPalabras[$i])) {
-      
-      permitido = false;
+    if(arrayNoPermitidas.includes(arrayPalabras[index])){
+      document.getElementById(campo).setCustomValidity("El campo "+campo+" incluye palabras no permitidas.");
+    }
+  
+    else {
+      document.getElementById(campo).setCustomValidity("");
     }
     
   }
 
-      if(permitido==false){
-        document.getElementById('titulo').setCustomValidity("Hay palabras no permitidas en uno de los campos."); 
-      }
-
-      else {
-        document.getElementById('titulo').setCustomValidity(""); 
-      }
-
 
   }
+
+
+  addEventListener("load", iniciar);

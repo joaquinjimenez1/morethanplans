@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                     <h6 class="ayuda">DESCRIPCIÓN</h6>
-                        <input required id="descripción" type="text" name="descripcion" class="inputLogin" value="">
+                        <input required id="descripcion" type="text" name="descripcion" class="inputLogin" value="">
                     </div>
                     <div class="form-group">
                     <h6 class="ayuda">IMAGEN</h6>
