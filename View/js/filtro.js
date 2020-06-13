@@ -1,33 +1,55 @@
+var boton = document.getElementById("enviar");
+var titulo = document.getElementById("titulo");
+var descripcion = document.getElementById("descripcion");
+var lugar = document.getElementById("lugar");
+boton.addEventListener('click',validaInput);
+boton.addEventListener('touchstart',validaInput);
+titulo.addEventListener('change',validaInput);
+descripcion.addEventListener('change',validaInput);
+lugar.addEventListener('change',validaInput);
 
-function iniciar(){
-  document.getElementById('titulo').addEventListener('blur',validaInput('titulo'));
-  document.getElementById('descripcion').addEventListener('blur',validaInput('descripcion'));
-  document.getElementById('lugar').addEventListener('blur',validaInput('lugar'));
-}
+function validaInput(){
 
+  var arrayNoPermitidas = ["gilipollas","tonto","capullo","polla","coño","pene","puta","mierda","porno","navo","bastardo","idiota"];
 
-function validaInput(campo){
+  var contenidotitulo = titulo.value.toLowerCase();
+  var contenidodescripcion = descripcion.value.toLowerCase();
+  var contenidolugar = lugar.value.toLowerCase();
 
-  var cadenaTotal = document.getElementById(campo).value;
-  var cadenaMinusculas = cadenaTotal.toLowerCase();
-  var arrayPalabras = cadenaMinusculas.split(" ");
-  var arrayNoPermitidas = ["gilipollas","tonto","capullo","polla","coño","pene","puta","mierda","porno","navo","bastardo","idiota",];
+  var arrayTitulo = contenidotitulo.split(" ");
+  var arrayDescripcion = contenidodescripcion.split(" ");
+  var arrayLugar = contenidolugar.split(" ");
+     
+  for (let index = 0; index < arrayTitulo.length; index++) {
+     if(arrayNoPermitidas.includes(arrayTitulo[index])){
+      document.getElementById('titulo').setCustomValidity("El título incluye palabras no permitidas."); 
+     }
+     else {
+      document.getElementById('titulo').setCustomValidity(""); 
+     }
+  }
 
-
-  for (let index = 0; index < arrayPalabras.length; index++) {
-
-    if(arrayNoPermitidas.includes(arrayPalabras[index])){
-      document.getElementById(campo).setCustomValidity("El campo "+campo+" incluye palabras no permitidas.");
+  for (let index = 0; index < arrayDescripcion.length; index++) {
+    if(arrayNoPermitidas.includes(arrayDescripcion[index])){
+     document.getElementById('descripcion').setCustomValidity("La descripción incluye palabras no permitidas."); 
     }
-  
     else {
-      document.getElementById(campo).setCustomValidity("");
+     document.getElementById('descripcion').setCustomValidity(""); 
     }
-    
+ }
+
+ for (let index = 0; index < arrayLugar.length; index++) {
+  if(arrayNoPermitidas.includes(arrayLugar[index])){
+   document.getElementById('lugar').setCustomValidity("El lugar incluye palabras no permitidas."); 
+  }
+  else {
+   document.getElementById('lugar').setCustomValidity(""); 
+  }
+}
+        
+      
   }
 
-
-  }
-
-
-  addEventListener("load", iniciar);
+  
+  
+  
