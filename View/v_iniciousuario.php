@@ -24,7 +24,7 @@
       <img src="../View/images/logo.png" height="30">
     </a>
     <form class="form-inline">
-    <a class="botonSalir" href="#">Ayuda</a>
+    <a class="botonSalir" href="../Controller/c_ayuda.php">Ayuda</a>
     <a class="botonSalir" href="../Controller/c_ajustes.php">Mi cuenta</a>
     <a href="../Controller/c_cerrarSesion.php" class="botonPlan">Salir</a>
     </form>
@@ -72,7 +72,7 @@
     <!-- PIE COLUMNA 2 -->
     <div id="enlaces" class="col-xl-6"><br>
     <a class="navbar-brand" href="../Controller/c_ajustes.php">Mi cuenta</a><br>
-    <a class="navbar-brand" href="#">Ayuda</a><br>
+    <a class="navbar-brand" href="../Controller/c_ayuda.php">Ayuda</a><br>
     </div>
     <input class="checkbox-cb" id="checkbox-cb" type="checkbox" />
     <?php

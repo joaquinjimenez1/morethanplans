@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../View/css/general.css">
     <link rel="stylesheet" type="text/css" href="../View/css/cabecerafooter.css">
     <link rel="stylesheet" type="text/css" href="../View/css/login.css">
-    <link rel="stylesheet" type="text/css" href="../View/css/eventos.css">
     <link rel="stylesheet" type="text/css" href="../View/css/cookie.css">
     <title>>PLANS</title>
 </head>
@@ -20,27 +19,52 @@
 <div class="wrapper">
   <nav class="navbar navbar-custom justify-content-between">
     <a class="navbar-brand" href="../Controller/c_inicio.php">
-      <img src="../View/images/logo.png" height="30">
+      <img src="../View/images/logo.png"height="30">
     </a>
     <form class="form-inline">
-    <a class="botonSalir" href="../Controller/c_ayuda.php">Ayuda</a>
+    <a class="botonSalir" href="#">Ayuda</a>
     <a class="botonSalir" href="../Controller/c_ajustes.php">Mi cuenta</a>
     <a href="../Controller/c_cerrarSesion.php" class="botonPlan">Salir</a>
     </form>
   </nav>
-  <!-- FIN HEADER -->
-  <!-- CONTENIDO -->
-  <div class="contenido row mostrarTodo">
-  <div id="segunintereses" class="col-xl-12"><br>
-  <h1>Eventos que te han encantado</h1>
-  <?=m_Evento::pintarEventosLikeLimitados($_SESSION['usuariomtp']);?>
-  <?=m_Evento::pintarEventosLike($_SESSION['usuariomtp']);?>
-  
-    </div><a class="btn btn-light" href="c_iniciousuario.php">Volver</a></div>
-  <!-- FIN CONTENIDO -->
-  <!-- PIE -->
+<!-- FIN HEADER -->
+<!-- CONTENIDO -->
+<div id="container">
+<h2>Ayuda de usuario</h2>
+<h5>El perfil de usuario pertenece al grupo de personas que busca planes en nuestra plataforma, sin posibilidad de crear o modificar planes.</h5>
+<br><h3>Pantalla de inicio</h3><br>
+<img class="img-fluid" src="../View/images/iniciousuario.png"><br>
+<ul>
+<li>1. Logo principal, el cual sirve para volver a la página de inicio en cualquier momento de nuestra experiencia.</li>
+<li>2. Menú principal, donde encontramos:
+  <ul>
+    <li>1. Ayuda: Muestra un manual de usuario.</li>
+    <li>2. Mi cuenta: Ajustes de la cuenta como modificar datos del usuario o borrar la cuenta.</li>
+    <li>3. Salir: Cierra la sesión y vuelve a la pantalla de login.</li>
+  </ul>
+</li>
+<li>3. Asistente de planes: Un pequeño chat con una asistente virtual que te ayudará a encontrar tus planes perfectos con algunas preguntas.</li>
+<li>4. Eventos que te han gustado: En esta sección aparecerán todos los eventos que hayamos marcado con favoritos.</li>
+<li>5. Ver todos nos llevará a una página en la que veremos todos los eventos marcados como favoritos.</li>
+<li>6. Descubre con nosotros es una sección en la que aparecerán planes recomendados.</li>
+<li>7. Ver más planes nos llevará a una página en la que veremos una lista mayor de planes.</li>
+<li>8. Zona social donde tenemos los enlaces a las redes sociales de morethanplans.</li>
+<li>9. Menú secundario con la misma funcionalidad que el mostrado en la zona superior.</li>
+</ul>
+<br><h3>Tarjeta de plan</h3><br>
+<img class="img-fluid" src="../View/images/tarjetaplan.png"><br>
+<li>1. Título</li>
+<li>2. Fecha, hora y lugar</li>
+<li>3. Descripción</li>
+<li>4. Organizador del evento con enlace a ver más eventos organizados por el mismo.</li>
+<li>5. Botón like con el que guardar eventos que te gustan.</li>
+<li>6. Imagen del evento.</li>
+</div><a class="btn btn-light" href="c_inicio.php">Volver</a></div>
+</div>
+<!-- FIN CONTENIDO -->
+<!-- PIE -->
   <footer class="pie row">
-    <!-- PIE COLUMNA 1 -->
+  <!-- COLUMNA 1 PIE -->
     <div id="informacion" class="col-xl-6">
     <p id="infopie"><br>MORETHANPLANS es una plataforma que une gente que busca planes, con los lugares y eventos perfectos para ellos.</p>
     <div class="social">
@@ -51,30 +75,20 @@
         <li><a href="#"><i class="fa fa-lg fa-youtube"></i></a></li>
     </ul>
   </div></div>
-    <!-- PIE COLUMNA 2 -->
+  <!-- COLUMNA 2 PIE -->
     <div id="enlaces" class="col-xl-6"><br>
     <a class="navbar-brand" href="../Controller/c_ajustes.php">Mi cuenta</a><br>
-    <a class="navbar-brand" href="../Controller/c_ayuda.php">Ayuda</a><br>
+    <a class="navbar-brand" href="#">Ayuda</a><br>
+    <a href="../Controller/c_cerrarSesion.php" class="navbar-brand">Salir</a>
     </div>
     <input class="checkbox-cb" id="checkbox-cb" type="checkbox" />
-    <?php
-    if($_REQUEST['primera']){
-      echo "<div class='cookie-bar'>
-      <span class='message'>Nuestro sitio utiliza cookies.</span>
-      <label for='checkbox-cb' class='close-cb'>X</label>
-      </div>";
-    }
-    ?>
 </div>
 </footer>
 <!-- FIN PIE -->
-   <script src="../View/js/eventos.js" type="text/javascript"></script>
    <script src="../View/js/popper.min.js" type="text/javascript"></script>
    <script src="../View/js/bootstrap.min.js" type="text/javascript"></script>
    <script src="../View/js/bootstrap.bundle.min.js" type="text/javascript"></script>
    <script src="../View/js/jquery-3.4.1.min.js" type="text/jquery-3"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
 </body>
 </html>

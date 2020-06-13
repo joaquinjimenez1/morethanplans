@@ -3,10 +3,10 @@
     include_once "m_Organizador.php";
     include_once "m_Usuario.php";
 
-    class m_Evento {
-
         //el codigo solo será usado para insert y delete, 
         //ya que es autoincrementable en la base de datos y no lo necesitamos en el constructor
+
+    class m_Evento {
 
         private $codigo;
         private $titulo;
@@ -334,8 +334,6 @@
             $conexion = m_morethanplansDB::connectDB();
             $consulta = $conexion->query("SELECT * FROM evento WHERE MATCH(titulo, descripcion, lugar, etiquetas, usuario_organizador) AGAINST ('".$busqueda."')");
             
-
-
             if($consulta->rowcount()<1){
                 echo "No hemos encontrado ningun evento para tí, necesitamos un poco más de información.";
             }
