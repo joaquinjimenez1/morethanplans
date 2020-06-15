@@ -270,7 +270,7 @@
         public static function pintarEventosEmpresa($empresaRecibida){
 
             $conexion = m_morethanplansDB::connectDB();
-            $consulta = $conexion->query("SELECT * FROM evento E, organizador O WHERE O.empresa = '".$empresaRecibida."'");
+            $consulta = $conexion->query("SELECT * FROM evento INNER JOIN organizador ON evento.usuario_organizador=organizador.usuario WHERE organizador.empresa='".$empresaRecibida."' ");
 
             if($consulta->rowcount()<1){
                 echo "No hay eventos actualmente a nombre de esta empresa.";
